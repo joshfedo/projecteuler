@@ -12,9 +12,13 @@ What is the 10 001st prime number?
  * no the fastest solution but it is correct
  */
 
+
+
+//i didnt want to remvoe this solution, but a much more efficent way to solve this would be using the
+//Sieve of Eratosthenes. I did this is problem 10 and it is much quicker
 $prime_count = 1;
 $num = 3;
-while ($prime_count != 10001){
+while ($num != 1000000){
     if(is_prime($num)){
          $prime_count++;
     }
