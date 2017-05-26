@@ -14,7 +14,7 @@ What is the 10 001st prime number?
 
 
 
-//i didnt want to remvoe this solution, but a much more efficent way to solve this would be using the
+//i didn't want to remove this solution, but a much more efficient way to solve this would be using the
 //Sieve of Eratosthenes. I did this is problem 10 and it is much quicker
 $prime_count = 1;
 $num = 3;
