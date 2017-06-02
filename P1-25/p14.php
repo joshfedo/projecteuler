@@ -5,9 +5,6 @@
  * Date: 6/2/2017
  * Time: 2:47 PM
  */
-
-
-
 $solved_numbers = array(1);
 for ($i = 2; $i < 1000000; $i++) {
 	$count = 0;
@@ -29,6 +26,5 @@ for ($i = 2; $i < 1000000; $i++) {
 	}
 	$solved_numbers[$i]=$count + 1;
 }
-
 echo array_search(max($solved_numbers),$solved_numbers);
 
