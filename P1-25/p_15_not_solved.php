@@ -40,61 +40,64 @@
 //);
 
 $grid = array(
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
-array(0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+
+
 
 );
 function rout_counter($grid,$i,$j,$count){
-
-
 	$this_gird = $grid;
-
 	$this_gird[$i][$j] = 1;
-
-	if($i ==9 && $j ==9){
+	if($i ==5 && $j ==5){
 		$count++;
-
-		//echo "<hr> $count<br>";
-		foreach ($this_gird as $grid){
-			foreach ($grid as $row){
-				echo " $row ";
-			}
-			echo "<br>";
-		}
-
-		echo "we did it!";
-		echo "<hr>";
-		echo "<hr>";
+//		echo "<pre>";
+//		echo print_r($this_gird);
+//		echo "</pre>";
 		return $count;
 	}
-
 	if(($j +1 < count($this_gird) && $this_gird[$i][$j+1] != 1 )){
-
 		$count = rout_counter($this_gird,$i,$j+1,$count);
-
 	}
 	if( ($i+ 1 < count($this_gird)) && $this_gird[$i+1][$j]!= 1){
 		$count = rout_counter($this_gird,$i+1,$j,$count);
-
 	}
-	//this is if you want to be able to move up and left as well
-//	if ($i - 1 >= 0 && $this_gird[$i-1][$j] != 1 ){
-//		echo "3: $i and $j  <br>";
-//		$count +=rout_counter($this_gird,$i -1,$j,$count);
-//	}
-//
-//	if($j -1 >= 0 && $this_gird[$i][$j-1] != 1 ){
-//		echo "4: $i and $j  <br>";
-//		$count += rout_counter($this_gird,$i,$j-1,$count);
-//	}
+	unset($this_gird);
 	return $count;
 }
-echo rout_counter($grid,0,0,0);
+//echo "total "  . rout_counter(make_arr(6),0,0,0);
+
+
+function make_arr($size){
+	$a = array_fill(0,$size,0);
+	$b=array();
+	for($i = 0; $i < $size; $i++){
+		array_push($b,$a);
+	}
+	echo "<pre>";
+	echo print_r($b);
+	echo "</pre>";
+	return $b;
+}
+
+//use this
+//http://mathworld.wolfram.com/CentralBinomialCoefficient.html
