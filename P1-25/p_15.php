@@ -5,19 +5,17 @@
  * Date: 6/2/2017
  * Time: 3:21 PM
  *
- *
  Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
  * <image>https://projecteuler.net/problem=15</image>
  How many such routes are there through a 20×20 grid?
  *
- *
+ *I was able to solve this using Central the formula Binomial Coefficient. This method is very efficient and fast.
  */
 
-
-
-
-
-
+/**
+ * @param $num, the number to factor
+ * @return int, The factorial of the input
+ */
 function factorial($num){
 	$result = 1;
 	for($i = $num; $i >=1; $i--){
@@ -26,22 +24,20 @@ function factorial($num){
 	return $result;
 }
 
+/**
+ * @param $grid_size, How large the grid is
+ * @return int, how many paths there are
+ */
 function solve_paths($grid_size){
 	return factorial(2*$grid_size)/factorial($grid_size)**2;
 }
 
 echo solve_paths(20);
 
-
-
-
-
 /*
  * This method worked but was very slow and took up a lot of memory. After looking at the output i realised this
  * could probably be solved with simple math. Im leaving the rest here just to show my recursion attempt*
  */
-
-
 
 //$grid = array(
 //array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
