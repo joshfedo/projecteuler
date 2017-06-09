@@ -61,6 +61,8 @@ $tri = array(
 $tri = array_reverse($tri);
 for($i = 0; $i < count($tri); $i++){
 	for ($j = 0; $j < count($tri[$i])-1; $j++){
+		//look one level ahead in the tree(array)
+		//and combine the largest of the two nodes
 		if($tri[$i][$j] < $tri[$i][$j+1]){
 			$tri[$i+1][$j] += $tri[$i][$j+1];
 		}else{
