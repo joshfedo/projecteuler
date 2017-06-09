@@ -21,9 +21,9 @@ Find the sum of the digits in the number 100!
 
 /*
  *
- * Because php will not handel any numbers 2^32 wihtout a additonal library
+ * Because php will not handel any numbers 2^32 without a additional library
  * this code will return the wrong answer. Using a lib such as BCMath would
- * be needed for php to solve this problem. This algorithum is solid though.
+ * be needed for php to solve this problem. This algorithm is solid though.
  *
  */
 
