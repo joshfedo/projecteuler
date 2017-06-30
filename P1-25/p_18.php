@@ -4,18 +4,13 @@
  * User: fedo
  * Date: 6/8/2017
  * Time: 11:07 AM
- *
  * By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
-
-3
-7 4
-2 4 6
-8 5 9 3
-
-That is, 3 + 7 + 4 + 9 = 23.
-
-Find the maximum total from top to bottom of the triangle below:
- *
+ * 3
+ * 7 4
+ * 2 4 6
+ * 8 5 9 3
+ * That is, 3 + 7 + 4 + 9 = 23.
+ * Find the maximum total from top to bottom of the triangle below:
  * 75
  * 95 64
  * 17 47 82
@@ -31,9 +26,6 @@ Find the maximum total from top to bottom of the triangle below:
  * 91 71 52 38 17 14 91 43 58 50 27 29 48
  * 63 66 04 68 89 53 67 30 73 16 69 87 40 31
  * 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
- *
- *
- *
  */
 
 $tri = array(
@@ -54,24 +46,21 @@ $tri = array(
 	array(4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23),
 );
 
-
 //to solve this i used "dynamic programming"
 //instead of brute force this method solved the
 //problem one layer at a time
 $tri = array_reverse($tri);
-for($i = 0; $i < count($tri); $i++){
-	for ($j = 0; $j < count($tri[$i])-1; $j++){
+for ($i = 0; $i < count($tri); $i++) {
+	for ($j = 0; $j < count($tri[$i]) - 1; $j++) {
 		//look one level ahead in the tree(array)
 		//and combine the largest of the two nodes
-		if($tri[$i][$j] < $tri[$i][$j+1]){
-			$tri[$i+1][$j] += $tri[$i][$j+1];
-		}else{
-			$tri[$i+1][$j] += $tri[$i][$j];
+		if ($tri[$i][$j] < $tri[$i][$j + 1]) {
+			$tri[$i + 1][$j] += $tri[$i][$j + 1];
+		} else {
+			$tri[$i + 1][$j] += $tri[$i][$j];
 		}
 	}
 }
-
-
 
 $awn = end($tri);
 echo $awn[0];

@@ -4,17 +4,12 @@
  * User: fedo
  * Date: 5/24/2017
  * Time: 4:41 PM
- *
  * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-
-Find the sum of all the primes below two million.
+ * Find the sum of all the primes below two million.
  */
 
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
-
-
-
 
 function find_prime_sum($max = 2000000)
 {

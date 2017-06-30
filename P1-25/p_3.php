@@ -10,9 +10,7 @@
  * Thoughts and notes:
  */
 
-
 $number = 600851475143;
-
 
 $i = 3;
 //no prime numbers will be above the sqrt

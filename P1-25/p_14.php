@@ -12,19 +12,19 @@ for ($i = 2; $i < 1000000; $i++) {
 	while ($number != 1) {
 		//by keeping track of seqences weve already solved we dont need to resolve them
 		//this is a major time saver
-		if(array_key_exists($number,$solved_numbers)){
+		if (array_key_exists($number, $solved_numbers)) {
 			$count += $solved_numbers[$number];
 			break;
 		}
 
 		if ($number % 2 == 0) {
-			$number = $number /  2;
+			$number = $number / 2;
 		} else {
 			$number = $number * 3 + 1;
 		}
 		$count++;
 	}
-	$solved_numbers[$i]=$count + 1;
+	$solved_numbers[$i] = $count + 1;
 }
-echo array_search(max($solved_numbers),$solved_numbers);
+echo array_search(max($solved_numbers), $solved_numbers);
 
