@@ -55,6 +55,7 @@ $grid = array(
 
 $largest = 0;
 
+//horizontal and vertical
 for ($i = 0; $i <= 16; $i++) {
 	for ($j = 0; $j <= 16; $j++) {
 		$horizontal = $grid[$i][$j] * $grid[$i][$j + 1] * $grid[$i][$j + 2] * $grid[$i][$j + 3];
@@ -67,8 +68,8 @@ for ($i = 0; $i <= 16; $i++) {
 		}
 	}
 }
-//left and right diagonal
 
+//left and right diagonal
 for ($i = 16; $i >= 3; $i--) {
 	for ($j = 0; $j <= 16; $j++) {
 		$r_diag = 0;
