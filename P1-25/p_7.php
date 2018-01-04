@@ -11,14 +11,6 @@
 
 //i didn't want to remove this solution, but a much more efficient way to solve this would be using the
 //Sieve of Eratosthenes. I did this in problem 10 and it was much quicker
-$prime_count = 1;
-$num = 3;
-while ($num != 1000000) {
-	if (is_prime($num)) {
-		$prime_count++;
-	}
-	$num += 2;
-}
 
 function is_prime($int)
 {
@@ -30,5 +22,16 @@ function is_prime($int)
 	}
 	return true;
 }
+
+
+$prime_count = 1;
+$num = 3;
+while ($num != 1000000) {
+	if (is_prime($num)) {
+		$prime_count++;
+	}
+	$num += 2;
+}
+
 
 echo $num - 2;
