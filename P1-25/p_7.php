@@ -10,7 +10,7 @@
  */
 
 //i didn't want to remove this solution, but a much more efficient way to solve this would be using the
-//Sieve of Eratosthenes. I did this is problem 10 and it is much quicker
+//Sieve of Eratosthenes. I did this in problem 10 and it was much quicker
 $prime_count = 1;
 $num = 3;
 while ($num != 1000000) {
